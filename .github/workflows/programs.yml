@@ -1,0 +1,43 @@
+# Builds the stand-alone Lapis Bridge programs (no Node.js needed) from download/lapis-bridge.cjs and attaches them to a
+# GitHub Release of this public repo, so customers can download them. Push a tag like v2.32.0, or run it by hand with a tag.
+name: programs
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag: { description: 'Release tag, e.g. v2.32.0', required: true }
+permissions: { contents: write }
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, arch: x64 }
+          - { os: macos-latest,   arch: arm64 }
+          - { os: macos-15-intel, arch: x64 }
+          - { os: ubuntu-24.04,   arch: x64 }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22, architecture: '${{ matrix.arch }}' }
+      - run: node tools/make-program.mjs
+      - uses: actions/upload-artifact@v4
+        with: { name: 'program-${{ matrix.os }}-${{ matrix.arch }}', path: 'out/lapis-bridge-*', if-no-files-found: error }
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: programs, merge-multiple: true }
+      - run: cd programs && sha256sum lapis-bridge-* > SHA256SUMS-programs.txt && cat SHA256SUMS-programs.txt
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          name: Lapis Bridge ${{ github.event.inputs.tag || github.ref_name }}
+          body: Stand-alone Lapis Bridge programs (no Node.js needed). Download page with instructions https://lapis.jupiteraudio.org/download/
+          files: |
+            programs/lapis-bridge-*
+            programs/SHA256SUMS-programs.txt
