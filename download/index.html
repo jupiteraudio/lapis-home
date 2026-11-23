@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download the Lapis Bridge</title>
+<meta name="description" content="The Lapis Bridge connects Lapis to your desks, wireless and show control. Free to download; reading is free, sending changes needs a licence key.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;--bg:#0f1216;--panel:#171b21;--ink:#eef1f5;--mute:#9aa4b2;--line:#2a313b;--acc:#4c8df0;--gold:#d4a73c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:64px}
+header img{height:32px;display:block}
+h1{font-size:2.2rem;line-height:1.1;margin:1.6em 0 .4em}
+.sub{color:var(--mute)}
+ol li{margin:.5em 0}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600}
+code{font-size:.85em;word-break:break-all;color:var(--mute)}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;border:1px solid var(--acc);background:var(--acc);color:#fff;text-decoration:none;font-weight:600}
+.note{color:var(--mute);font-size:.95em}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var(--mute);font-size:.9em}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="../"><img src="../assets/lapis-logo.svg" alt="Lapis"></a></div></header>
+<main class="wrap">
+<h1>Download the Lapis Bridge</h1>
+<p class="sub">The Bridge is a small program on your laptop. It lets Lapis talk to your desks, wireless, QLab, Smaart and the network, and it opens Lapis for you. Reading from devices is free. Sending changes to them needs a licence key: free for non-commercial use, or a <a href="../#pricing">commercial licence</a>.</p>
+
+<h2>Install</h2>
+<ol>
+<li>Install <a href="https://nodejs.org">Node.js</a> 18 or newer (the LTS version), once.</li>
+<li>Download the three files below into one folder.</li>
+<li>Mac: double-click <b>Start-Lapis-Bridge.command</b> (first time: right-click › Open). Windows: double-click <b>Start-Lapis-Bridge.bat</b>.</li>
+<li>Lapis opens in your browser, already paired. To send changes to devices, open the Bridge panel › Licence and paste your key.</li>
+</ol>
+
+<table>
+<thead><tr><th>File</th><th>What</th></tr></thead>
+<tbody>
+<tr><td><a href="lapis-bridge.cjs" download>lapis-bridge.cjs</a></td><td>The Bridge, version 2.31.0 (2.2 MB). All systems.</td></tr>
+<tr><td><a href="Start-Lapis-Bridge.command" download>Start-Lapis-Bridge.command</a></td><td>Start it on a Mac.</td></tr>
+<tr><td><a href="Start-Lapis-Bridge.bat" download>Start-Lapis-Bridge.bat</a></td><td>Start it on Windows.</td></tr>
+</tbody>
+</table>
+<p class="note">Check your download: <a href="SHA256SUMS.txt">SHA-256 fingerprints</a>. The Bridge listens only on this computer (127.0.0.1), talks only to devices on private networks, and asks before it changes anything on a desk. The licence check sends only your key, once a month; never your shows or anything about your computer.</p>
+<p><a class="btn" href="../app/">Or open Lapis in your browser</a></p>
+<p class="note">Desk drivers are in beta: try them on the desk before a show. Questions: <a href="mailto:info@jupiteraudio.org?subject=Lapis%20Bridge">info@jupiteraudio.org</a>.</p>
+</main>
+<footer><div class="wrap">Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · © 2026</div></footer>
+</body>
+</html>
