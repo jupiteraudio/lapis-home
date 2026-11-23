@@ -28,6 +28,7 @@ jobs:
         with: { name: 'program-${{ matrix.os }}-${{ matrix.arch }}', path: 'out/lapis-bridge-*', if-no-files-found: error }
   release:
     needs: build
+    if: ${{ always() }}   # publish what was built; a platform that could not get a runner is added by running this again
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/download-artifact@v4
