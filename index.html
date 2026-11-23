@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lapis: system design and show documentation for live sound</title>
+<meta name="description" content="Lapis plans the sound system and writes the paperwork: input and output lists, desks and stage racks, RF, power, network, PA design and system diagrams. By Jupiter Audio.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Lapis: system design and show documentation for live sound">
+<meta property="og:description" content="Input and output lists, desks and racks, RF, power, PA design and system diagrams in one show file.">
+<meta property="og:image" content="assets/diagram.webp">
+<style>
+:root{color-scheme:dark;--bg:#0f1216;--panel:#171b21;--panel2:#1d222a;--ink:#eef1f5;--mute:#9aa4b2;--line:#2a313b;--acc:#4c8df0;--red:#b8322a;--gold:#d4a73c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:5;background:rgba(15,18,22,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:18px;height:64px}
+header img{height:32px;display:block}
+header nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
+header nav a{color:var(--mute);text-decoration:none}
+header nav a:hover{color:var(--ink)}
+.hero{padding-top:72px;padding-bottom:40px}
+.eyebrow{color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.08;margin:.35em 0 .35em;letter-spacing:-.01em;max-width:17em}
+.lead{font-size:1.2rem;color:var(--mute);max-width:36em;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 0}
+.btn{display:inline-block;padding:12px 22px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);text-decoration:none;font-weight:600}
+.btn:hover{border-color:var(--mute)}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff}
+.shot{margin:44px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);background:var(--panel)}
+.shot img{display:block;width:100%;height:auto}
+figcaption{padding:10px 16px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+section{padding:56px 0 8px}
+h2{font-size:1.7rem;line-height:1.2;margin:0 0 .5em}
+.sub{color:var(--mute);max-width:40em;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card b{display:block;margin-bottom:6px}
+.card p{margin:0;color:var(--mute);font-size:15.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+@media (max-width:820px){.two{grid-template-columns:1fr}header nav{display:none}}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-weight:600;font-size:14px}
+td.price{white-space:nowrap;font-weight:700}
+.note{color:var(--mute);font-size:14.5px;margin-top:14px}
+.band{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:30px 28px;margin-top:10px}
+footer{margin-top:70px;border-top:1px solid var(--line);padding:28px 0 46px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a href="./" aria-label="Lapis home"><img src="assets/lapis-logo.svg" alt="Lapis"></a>
+<nav><a href="#what">What it does</a><a href="#screens">Screens</a><a href="#pricing">Pricing</a><a href="#licence">Licence</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<div class="eyebrow">For live sound engineers and production companies</div>
+<h1>The whole sound system, planned and documented in one place.</h1>
+<p class="lead">Lapis turns a rider into input and output lists, desk and stage-rack patching, RF, power, network, PA design and a system diagram. Change one channel and every document follows.</p>
+<div class="cta">
+<a class="btn primary" href="mailto:info@jupiteraudio.org?subject=Lapis%20licence">Get a licence</a>
+<a class="btn" href="mailto:info@jupiteraudio.org?subject=Lapis%20demo">Ask for a demo</a>
+</div>
+<figure class="shot"><img src="assets/diagram.webp" width="1600" height="1000" alt="Lapis system diagram built from the input list: stage racks, FOH and monitor desks, and the USITT title block"><figcaption>System diagram, built from the lists in one click.</figcaption></figure>
+</div>
+
+<div class="wrap">
+<section id="what">
+<h2>What it does</h2>
+<p class="sub">One show file holds everything about the sound system. Lapis checks it against the real limits of the desks, racks and networks you choose.</p>
+<div class="grid">
+<div class="card"><b>Input and output lists</b><p>Mics, DIs, stands, 48V, gain, patch and monitor sends. Import a rider and clean it up, or start from a template.</p></div>
+<div class="card"><b>Desks and stage racks</b><p>FOH and monitor desks sharing racks, digital or analog split, gain tracking. Lapis knows the channel counts and network limits.</p></div>
+<div class="card"><b>PA design</b><p>Arrays, subs and fills on the venue plan, with coverage, alignment and an STI estimate from published methods. Sources are named.</p></div>
+<div class="card"><b>RF</b><p>Frequency list with conflict and intermodulation checks, and the licence-free bands for the venue's location.</p></div>
+<div class="card"><b>Power and network</b><p>Power distribution and the audio network planned with the rest of the show, so nothing is forgotten on the day.</p></div>
+<div class="card"><b>System diagram and paperwork</b><p>A diagram drawn to USITT conventions, plus printable input, output and equipment lists and an advance sheet.</p></div>
+</div>
+</section>
+
+<section id="screens">
+<h2>A look inside</h2>
+<p class="sub">Screens from a built-in template: festival FOH and monitors on two shared stage racks.</p>
+<div class="two">
+<figure class="shot" style="margin:0"><img src="assets/inputs.webp" width="1600" height="1000" loading="lazy" alt="Lapis input list with channels, mics, stands, 48V, gain and rack inputs"><figcaption>Input list: channel use, mics, stands and 48V at a glance.</figcaption></figure>
+<figure class="shot" style="margin:0"><img src="assets/desks.webp" width="1600" height="1000" loading="lazy" alt="Lapis desks and racks: FOH console, monitor desk and stage racks with channel counts"><figcaption>Desks and racks: what the FOH and monitor desks can actually reach.</figcaption></figure>
+</div>
+</section>
+
+<section>
+<h2>Works with your tools</h2>
+<div class="grid">
+<div class="card"><b>Hardware stays local</b><p>An optional local program, the Lapis Bridge, talks to desks and devices on your own network. Every write to hardware asks you to confirm.</p></div>
+<div class="card"><b>Works with AI assistants</b><p>Lapis gives an assistant checked tools and a strict show format, so it can draft a show from a rider. You review and approve every value.</p></div>
+<div class="card"><b>Your shows are your files</b><p>Shows are saved on your computer and as show files you can keep, send and archive.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<p class="sub">One flat yearly fee per company. No per-show or per-channel charges.</p>
+<div class="band">
+<table>
+<thead><tr><th>Licence</th><th>Who</th><th>Per year, excl. VAT</th></tr></thead>
+<tbody>
+<tr><td>Solo, reduced</td><td>One person, under €20,000 a year from audio work</td><td class="price">€69</td></tr>
+<tr><td>Solo</td><td>One person</td><td class="price">€189</td></tr>
+<tr><td>Small company</td><td>2 to 10 people</td><td class="price">€590</td></tr>
+<tr><td>Company</td><td>11 to 50 people</td><td class="price">€1,490</td></tr>
+<tr><td>Large or network</td><td>Over 50 people or several sites</td><td class="price">By agreement</td></tr>
+</tbody>
+</table>
+<div class="cta"><a class="btn primary" href="mailto:info@jupiteraudio.org?subject=Lapis%20licence">Get a licence</a></div>
+<p class="note">Online checkout is coming soon; until then, write to us and we send you the licence and an invoice. Prices may change for new or renewing licences.</p>
+</div>
+</section>
+
+<section id="licence">
+<h2>Licence</h2>
+<div class="grid">
+<div class="card"><b>Free for non-commercial use</b><p>Students, teachers and researchers at schools, universities and public research bodies; charities; public bodies; personal hobby use. Under the PolyForm Noncommercial License 1.0.0. Write to us for access.</p></div>
+<div class="card"><b>Commercial licence for paid work</b><p>Freelance engineers on a paid job, production and rental companies, commercial venues and theatres, and paid training or consulting that uses Lapis.</p></div>
+</div>
+<p class="note">A student who also does paid shows: studying is free, paid shows need a licence. This is a summary; the binding terms are the licence text and the agreement you receive. <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/">PolyForm Noncommercial 1.0.0</a>.</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="sub">Questions, a demo, a quote for a larger company, or a free licence for education: write to <a href="mailto:info@jupiteraudio.org?subject=Lapis">info@jupiteraudio.org</a>.</p>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap">
+<span><span class="dot"></span>Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · Tommaso Rolff</span>
+<span>© 2026 Jupiter Audio</span>
+</div></footer>
+</body>
+</html>
