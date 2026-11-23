@@ -33,7 +33,19 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var
 <h1>Download the Lapis Bridge</h1>
 <p class="sub">The Bridge is a small program on your laptop. It lets Lapis talk to your desks, wireless, QLab, Smaart and the network, and it opens Lapis for you. Reading from devices is free. Sending changes to them needs a licence key: free for non-commercial use, or a <a href="../#pricing">commercial licence</a>.</p>
 
-<h2>Install</h2>
+<h2>The program (no Node.js needed)</h2>
+<table>
+<thead><tr><th>Computer</th><th>Download</th><th>First start</th></tr></thead>
+<tbody>
+<tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-arm64">lapis-bridge-macos-arm64</a></td><td rowspan="2">The program is not signed by Apple yet. In Terminal, in your Downloads folder: <code>xattr -d com.apple.quarantine lapis-bridge-macos-*; chmod +x lapis-bridge-macos-*</code> then double-click it (or run it from Terminal). Allow Local Network when macOS asks.</td></tr>
+<tr><td>Mac with Intel</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-x64">lapis-bridge-macos-x64</a></td></tr>
+<tr><td>Windows</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-windows-x64.exe">lapis-bridge-windows-x64.exe</a></td><td>Not signed yet: Windows may show “Windows protected your PC”. Choose More info › Run anyway. Allow private networks in the firewall question.</td></tr>
+<tr><td>Linux</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-linux-x64">lapis-bridge-linux-x64</a></td><td><code>chmod +x lapis-bridge-linux-x64</code>, then run it.</td></tr>
+</tbody>
+</table>
+<p class="note">Lapis opens in your browser, already paired. Fingerprints of the programs: <a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/SHA256SUMS-programs.txt">SHA256SUMS-programs.txt</a>. All files and older versions: <a href="https://github.com/jupiteraudio/lapis-home/releases">releases</a>.</p>
+
+<h2>Or with Node.js</h2>
 <ol>
 <li>Install <a href="https://nodejs.org">Node.js</a> 18 or newer (the LTS version), once.</li>
 <li>Download the three files below into one folder.</li>
