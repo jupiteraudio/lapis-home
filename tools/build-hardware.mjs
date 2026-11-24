@@ -27,9 +27,9 @@ ${g.items
 </table>`
   )
   .join('\n');
-const n = d.groups.flatMap(g => g.items).filter(i => i.status === 'confirmed').length;
+const all = d.groups.flatMap(g => g.items), n = all.filter(i => i.status === 'confirmed').length, part = all.filter(i => i.status === 'partly').length;
 writeFileSync(
   join(root, 'hardware/index.html'),
-  tpl.replace('{{TABLES}}', rows).replace(/{{UPDATED}}/g, esc(d.updated)).replace(/{{LAPIS}}/g, esc(d.lapis)).replace('{{CONFIRMED}}', String(n))
+  tpl.replace('{{TABLES}}', rows).replace(/{{UPDATED}}/g, esc(d.updated)).replace(/{{LAPIS}}/g, esc(d.lapis)).replace('{{CONFIRMED}}', n + ' fully' + (part ? ', ' + part + ' partly' : ''))
 );
 console.log('hardware/index.html: ' + d.groups.flatMap(g => g.items).length + ' families, ' + n + ' confirmed');
