@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lapis field test: a desk or wireless system</title>
+<meta name="description" content="A 20-minute test that confirms Lapis works with your desk or wireless system, and records what does not.">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;--bg:#0f1216;--panel:#171b21;--ink:#eef1f5;--mute:#9aa4b2;--line:#2a313b;--acc:#4c8df0;--gold:#d4a73c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:64px}
+header img{height:32px;display:block}
+h1{font-size:2.2rem;line-height:1.1;margin:1.6em 0 .4em}
+.sub{color:var(--mute)}
+ol li{margin:.5em 0}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600}
+code{font-size:.85em;word-break:break-all;color:var(--mute)}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;border:1px solid var(--acc);background:var(--acc);color:#fff;text-decoration:none;font-weight:600}
+.note{color:var(--mute);font-size:.95em}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var(--mute);font-size:.9em}
+.st{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.82em;font-weight:600;white-space:nowrap}
+.st-confirmed{background:#1f4d2e;color:#9be3b0}.st-partly{background:#4d431f;color:#e8d38f}.st-pretend{background:#2a313b;color:#c3ccd8}.st-none{background:#3b2a2a;color:#e0a9a9}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600}
+.small{color:var(--mute);font-size:.88em}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="../../"><img src="../../assets/lapis-logo.svg" alt="Lapis"></a></div></header>
+<main class="wrap">
+<h1>Field test: a desk or wireless system</h1>
+<p class="sub">About 20 minutes. It confirms that Lapis works with one real device and firmware, and records what does not. Check the <a href="../../hardware/">hardware list</a> first: a model and firmware nobody has confirmed yet helps the most.</p>
+
+<h2>Before you start</h2>
+<ul>
+<li><b>Never during a show or a live rehearsal.</b> Use the shop, a warehouse or an empty venue.</li>
+<li><b>Save a backup of the desk show</b> (or the receiver setup) first. The write test changes channel names.</li>
+<li>You need Lapis 2.32.1 or later, the <a href="../../download/">Bridge</a>, and your computer on the same network as the device (a cable straight to the desk or through a switch).</li>
+<li>Write down: make and model, firmware version, how it is connected.</li>
+</ul>
+
+<h2>Steps for a desk</h2>
+<ol>
+<li><b>Start the Bridge.</b> Lapis opens in your browser, already paired; the Bridge button at the top right turns green.</li>
+<li><b>Find the desk.</b> Network › <b>Scan network</b>, then <b>Use as FOH desk</b> on the desk that appears. If it does not appear, type the desk's address in the Console tab. Note whether the scan found it.</li>
+<li><b>Check the link.</b> Console › <b>Check bridge</b>, and on X32, X Air and DiGiCo also <b>Identify desk</b>. Note what it says about model and firmware.</li>
+<li><b>Read test.</b> Console › <b>Read desk</b>. Compare the names and colours (and 48V, where shown) with the desk screen, channel by channel. Note every difference.</li>
+<li><b>Write test.</b> Change three channel names in Lapis (Inputs), then Console › Read desk, <b>Push selected</b>. Check the three names on the desk. Then <b>Undo last push</b> and check they are back.</li>
+<li><b>Follow test</b> (desks that follow: X32, WING, Yamaha, dLive, Avantis, DiGiCo). Touch a channel on the desk and check Lapis follows within a few seconds.</li>
+<li><b>Drop test.</b> Pull the network cable for 10 seconds and plug it back. Does Lapis reconnect by itself, or did you have to press Check bridge?</li>
+<li><b>Save the report.</b> Show tab › <b>Report a problem</b> › Save report. The file holds the version, the Bridge state and its last messages. Leave "Include the open show" off unless it matters.</li>
+</ol>
+<p class="note">Gain, 48V, patch and snapshot changes are off in the Bridge panel until you switch them on. Leave them off for this test unless you want to try them; if you do, say so in the report.</p>
+
+<h2>Steps for wireless</h2>
+<ol>
+<li>Start the Bridge, then Live › <b>Wireless status</b>: add the receiver or transmitter by its address.</li>
+<li><b>Read test.</b> Compare name, frequency, battery and RF level (whatever the device shows) with its own screen.</li>
+<li><b>Live test.</b> Switch a transmitter off and on, or change a name on the device. Does Lapis follow?</li>
+<li><b>Write test</b> (Shure Axient Digital, ULX-D, SLX-D, QLX-D only). Switch on <b>Allow receiver changes</b> in the Bridge panel. RF › Receivers: link one channel, <b>Push to receivers</b>, check frequency and name on the receiver, then set them back.</li>
+<li>Drop test and report as for a desk (steps 7 and 8 above).</li>
+</ol>
+<p class="note">Sennheiser EW-DX or G4 on firmware 4.0 or later: if nothing answers, switch on legacy mode (SSCV1) in Sennheiser's WSM and try again. Tell us whether you needed it.</p>
+
+<h2>Send it back</h2>
+<p>Use the <a href="../../feedback/">feedback form</a> with type <b>Field test result</b>. Put the model and firmware under "Hardware used", each step as passed, failed or not possible under "What happened", and attach the report file and a photo of the device screen next to Lapis.</p>
+<p class="note">We may use your report to improve Lapis. Tell us in the form if you want your name on the <a href="../../hardware/">hardware list</a>.</p>
+</main>
+<footer><div class="wrap">Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · © 2026</div></footer>
+</body>
+</html>

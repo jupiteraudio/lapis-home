@@ -1,0 +1,39 @@
+{
+  "updated": "2026-11-24",
+  "lapis": "2.32.1",
+  "note": "One entry per device family. status: confirmed (a person ran it on real hardware and the log was checked), partly (some functions confirmed), pretend (built from the maker's or a community protocol document and tested against a pretend device only), none (no driver). Add a line to confirmed[] for every checked field test.",
+  "groups": [
+    {
+      "name": "Desks",
+      "items": [
+        { "family": "Behringer / Midas X32 · M32", "does": "Names, colours, 48V, preamp gain, input routing, meters and autogain, follow the desk", "protocol": "OSC (community document)", "status": "pretend", "confirmed": [] },
+        { "family": "Behringer X Air · Midas MR", "does": "Names, colours, 48V, preamp gain, channel source, meters and autogain", "protocol": "OSC (community document)", "status": "pretend", "confirmed": [] },
+        { "family": "Behringer WING", "does": "Names, colours, input patch, 48V, preamp gain, follow the desk, desk report", "protocol": "OSC (maker's document, firmware 3.0.6)", "status": "pretend", "confirmed": [] },
+        { "family": "Yamaha CL · QL · TF · DM7 · DM3 · RIVAGE PM", "does": "Names, colours, preamp gain, input patch (RIVAGE), 48V via Rio (CL/QL), scenes, follow the desk, desk report", "protocol": "RCP (community document and open-source parameter lists)", "status": "pretend", "confirmed": [] },
+        { "family": "Allen & Heath dLive · Avantis", "does": "Names, colours, 48V, preamp gain, HPF and PEQ, scenes, follow the desk", "protocol": "MIDI over TCP (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "Allen & Heath SQ", "does": "Scene recall only", "protocol": "MIDI over TCP (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "DiGiCo SD · Quantum", "does": "Names, 48V, preamp gain, HPF, EQ and dynamics, snapshots, meters and autogain, follow the desk", "protocol": "OSC, iPad protocol (open-source modules)", "status": "pretend", "confirmed": [] },
+        { "family": "Avid VENUE S6L", "does": "No driver: the desk has no OSC query for names, patch or snapshots", "protocol": "–", "status": "none", "confirmed": [] }
+      ]
+    },
+    {
+      "name": "Wireless",
+      "items": [
+        { "family": "Shure Axient Digital · ULX-D · SLX-D · QLX-D", "does": "Read name, frequency, battery and RF; set frequency and name", "protocol": "TCP command strings (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "Shure PSM 1000 (P10T)", "does": "Read name, frequency, RF power, RF mute, audio level", "protocol": "TCP command strings (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "Sennheiser EW-DX and other SSC receivers", "does": "Read name, frequency, battery, RF. Firmware 4.0 and later may need SSCV1 legacy mode on in WSM (to confirm)", "protocol": "Sound Control Protocol (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "Sennheiser Digital 6000 · 9000", "does": "Read name, frequency, battery, warnings", "protocol": "Sound Control Protocol (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "Sennheiser ew IEM G3 · G4 · 2000", "does": "Read name, frequency, RF mute", "protocol": "Media Control Protocol (maker's document, open-source module)", "status": "pretend", "confirmed": [] }
+      ]
+    },
+    {
+      "name": "Show control and measurement",
+      "items": [
+        { "family": "QLab 4 · 5", "does": "Cue list, cues from the show, show log. MIDI cue values still to confirm", "protocol": "OSC (maker's document)", "status": "pretend", "confirmed": [] },
+        { "family": "LiveProfessor", "does": "Snapshots and tempo over OSC; a session file built from your input list (not yet opened in LiveProfessor)", "protocol": "OSC (maker's document); project file learned from user files", "status": "pretend", "confirmed": [] },
+        { "family": "Smaart v9", "does": "Read status, reset averages, generator gain, delay tracking. Not yet tried: generator on, password login", "protocol": "Smaart API v4 (maker's notes)", "status": "partly", "confirmed": [ { "model": "Smaart LE 9.6.4", "firmware": "macOS, port 26000, no password", "date": "2026-11-19", "by": "Jupiter Audio", "what": "Status, measurement list, average reset, gain, delay tracking" } ] },
+        { "family": "Lake (LM 44 · LM 26)", "does": "No driver: the Lake protocol document is not public. Use Smaart connected to Lake Controller", "protocol": "–", "status": "none", "confirmed": [] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lapis: what is confirmed on real hardware</title>
+<meta name="description" content="Which desks, wireless systems and tools Lapis has been tested with on real hardware, and which only against pretend devices.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;--bg:#0f1216;--panel:#171b21;--ink:#eef1f5;--mute:#9aa4b2;--line:#2a313b;--acc:#4c8df0;--gold:#d4a73c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:64px}
+header img{height:32px;display:block}
+h1{font-size:2.2rem;line-height:1.1;margin:1.6em 0 .4em}
+.sub{color:var(--mute)}
+ol li{margin:.5em 0}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600}
+code{font-size:.85em;word-break:break-all;color:var(--mute)}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;border:1px solid var(--acc);background:var(--acc);color:#fff;text-decoration:none;font-weight:600}
+.note{color:var(--mute);font-size:.95em}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var(--mute);font-size:.9em}
+.st{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.82em;font-weight:600;white-space:nowrap}
+.st-confirmed{background:#1f4d2e;color:#9be3b0}.st-partly{background:#4d431f;color:#e8d38f}.st-pretend{background:#2a313b;color:#c3ccd8}.st-none{background:#3b2a2a;color:#e0a9a9}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600}
+.small{color:var(--mute);font-size:.88em}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="../"><img src="../assets/lapis-logo.svg" alt="Lapis"></a></div></header>
+<main class="wrap">
+<h1>Confirmed on real hardware</h1>
+<p class="sub">Every Lapis driver follows a published protocol document, and every one is tested against a pretend device built from that document. That is not the same as a real desk. This page says honestly which devices someone has actually run Lapis with, on which firmware. Confirmed so far: {{CONFIRMED}}.</p>
+<p>Until your device is confirmed: try it in the shop or at a rehearsal, never during a show, and save a backup of the desk first. Anything that changes a device stays off until you switch it on in the Bridge panel.</p>
+<p><b>Have one of these?</b> Run the <a href="../testers/field-test/">field test</a> (about 20 minutes) and send the result through the <a href="../feedback/">feedback form</a>. Every confirmed model is listed here with your name, if you want.</p>
+{{TABLES}}
+<p class="note">Updated {{UPDATED}} for Lapis {{LAPIS}}. Pretend device: a small program that answers like the desk, built from the protocol document; it proves Lapis speaks the document, not that the desk does what the document says.</p>
+</main>
+<footer><div class="wrap">Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · © 2026</div></footer>
+</body>
+</html>
