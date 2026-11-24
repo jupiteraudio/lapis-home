@@ -1,9 +1,11 @@
 # Builds the stand-alone Lapis Bridge programs (no Node.js needed) from download/lapis-bridge.cjs and attaches them to a
-# GitHub Release of this public repo, so customers can download them. Push a tag like v2.32.0, or run it by hand with a tag.
+# GitHub Release of this public repo, so customers can download them. Push a tag like v2.32.0, run it by hand with a tag,
+# or push a branch named build/<tag> (e.g. build/v2.32.0) to rebuild and re-attach the programs to that existing release.
 name: programs
 on:
   push:
     tags: ['v*']
+    branches: ['build/v*']
   workflow_dispatch:
     inputs:
       tag: { description: 'Release tag, e.g. v2.32.0', required: true }
@@ -23,7 +25,11 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with: { node-version: 22, architecture: '${{ matrix.arch }}' }
+      - id: tag
+        shell: bash
+        run: echo "tag=${{ github.event.inputs.tag || github.ref_name }}" | sed 's#tag=build/#tag=#' >> "$GITHUB_OUTPUT"
       - run: node tools/make-program.mjs
+        env: { LAPIS_VERSION: '${{ steps.tag.outputs.tag }}' }
       - uses: actions/upload-artifact@v4
         with: { name: 'program-${{ matrix.os }}-${{ matrix.arch }}', path: 'out/lapis-bridge-*', if-no-files-found: error }
   release:
@@ -31,13 +37,15 @@ jobs:
     if: ${{ always() }}   # publish what was built; a platform that could not get a runner is added by running this again
     runs-on: ubuntu-24.04
     steps:
+      - id: tag
+        run: echo "tag=${{ github.event.inputs.tag || github.ref_name }}" | sed 's#tag=build/#tag=#' >> "$GITHUB_OUTPUT"
       - uses: actions/download-artifact@v4
         with: { path: programs, merge-multiple: true }
       - run: cd programs && sha256sum lapis-bridge-* > SHA256SUMS-programs.txt && cat SHA256SUMS-programs.txt
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
-          name: Lapis Bridge ${{ github.event.inputs.tag || github.ref_name }}
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Lapis Bridge ${{ steps.tag.outputs.tag }}
           body: Stand-alone Lapis Bridge programs (no Node.js needed). Download page with instructions https://lapis.jupiteraudio.org/download/
           files: |
             programs/lapis-bridge-*
