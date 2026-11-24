@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lapis feedback</title>
+<meta name="description" content="Send feedback on Lapis: a bug, an idea, a question or a field-test result. Short form, no account needed.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;--bg:#0f1216;--panel:#171b21;--ink:#eef1f5;--mute:#9aa4b2;--line:#2a313b;--acc:#4c8df0;--gold:#d4a73c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:64px}
+header img{height:32px;display:block}
+h1{font-size:2.2rem;line-height:1.1;margin:1.6em 0 .4em}
+.sub{color:var(--mute)}
+ol li{margin:.5em 0}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95em}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600}
+code{font-size:.85em;word-break:break-all;color:var(--mute)}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;border:1px solid var(--acc);background:var(--acc);color:#fff;text-decoration:none;font-weight:600}
+.note{color:var(--mute);font-size:.95em}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var(--mute);font-size:.9em}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="../"><img src="../assets/lapis-logo.svg" alt="Lapis"></a></div></header>
+<main class="wrap">
+<h1>Send feedback</h1>
+<p class="sub" id="msg">Opening the feedback form…</p>
+<p><a class="btn" id="go" href="mailto:info@jupiteraudio.org?subject=Lapis%20feedback">Open the feedback form</a></p>
+<p class="note">A bug, something confusing, an idea, a question, or a result from a test on a real desk or receiver: it all goes in the same short form. No account needed. A screenshot, the Lapis version and the report file from <b>Show tab › Report a problem</b> help a lot. Every report gets a number and is read the same week; blockers the same day.</p>
+<p class="note">Prefer mail? <a href="mailto:info@jupiteraudio.org?subject=Lapis%20feedback">info@jupiteraudio.org</a>.</p>
+</main>
+<footer><div class="wrap">Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · © 2026</div></footer>
+<script>
+// The one place to change when the form moves. Empty = no form yet: the button sends a mail instead.
+var FORM_URL = '';
+if (FORM_URL) {
+  document.getElementById('go').href = FORM_URL;
+  location.replace(FORM_URL);
+} else {
+  document.getElementById('msg').textContent = 'The feedback form opens here soon. Until then, mail us.';
+  document.getElementById('go').textContent = 'Mail your feedback';
+}
+</script>
+</body>
+</html>

@@ -37,8 +37,8 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var
 <table>
 <thead><tr><th>Computer</th><th>Download</th><th>First start</th></tr></thead>
 <tbody>
-<tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-arm64">lapis-bridge-macos-arm64</a></td><td rowspan="2">The program is not signed by Apple yet. In Terminal, in your Downloads folder: <code>xattr -d com.apple.quarantine lapis-bridge-macos-*; chmod +x lapis-bridge-macos-*</code> then double-click it (or run it from Terminal). Allow Local Network when macOS asks.</td></tr>
-<tr><td>Mac with Intel</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-x64">lapis-bridge-macos-x64</a></td></tr>
+<tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-arm64.zip">Lapis Bridge for Apple Silicon (.zip)</a></td><td rowspan="2">Open the zip and drag <b>Lapis Bridge</b> to Applications, then double-click it. It is not signed by Apple yet, so the first time macOS says it can't check it: open System Settings › Privacy &amp; Security, scroll down and click <b>Open Anyway</b> (on older macOS: right-click the app › Open). A Terminal window opens with the Bridge running; close it to stop the Bridge. Allow Local Network when macOS asks. <span class="note">Using Terminal anyway? The bare program is still on the <a href="https://github.com/jupiteraudio/lapis-home/releases/tag/v2.32.0">release page</a>.</span></td></tr>
+<tr><td>Mac with Intel</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-macos-x64.zip">Lapis Bridge for Intel Mac (.zip)</a></td></tr>
 <tr><td>Windows</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-windows-x64.exe">lapis-bridge-windows-x64.exe</a></td><td>Not signed yet: Windows may show “Windows protected your PC”. Choose More info › Run anyway. Allow private networks in the firewall question.</td></tr>
 <tr><td>Linux</td><td><a href="https://github.com/jupiteraudio/lapis-home/releases/download/v2.32.0/lapis-bridge-linux-x64">lapis-bridge-linux-x64</a></td><td><code>chmod +x lapis-bridge-linux-x64</code>, then run it.</td></tr>
 </tbody>
@@ -63,7 +63,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:24px 0;color:var
 </table>
 <p class="note">Check your download: <a href="SHA256SUMS.txt">SHA-256 fingerprints</a>. The Bridge listens only on this computer (127.0.0.1), talks only to devices on private networks, and asks before it changes anything on a desk. The licence check sends only your key, once a month; never your shows or anything about your computer.</p>
 <p><a class="btn" href="../app/">Or open Lapis in your browser</a></p>
-<p class="note">Desk drivers are in beta: try them on the desk before a show. Questions: <a href="mailto:info@jupiteraudio.org?subject=Lapis%20Bridge">info@jupiteraudio.org</a>.</p>
+<p class="note">Desk drivers are in beta: try them on the desk before a show. Something not working, or an idea? <a href="../feedback/">Send feedback</a> (short form, no account needed). Questions: <a href="mailto:info@jupiteraudio.org?subject=Lapis%20Bridge">info@jupiteraudio.org</a>.</p>
 </main>
 <footer><div class="wrap">Lapis is made by <a href="https://jupiteraudio.org">Jupiter Audio</a>, Den Haag · © 2026</div></footer>
 </body>
