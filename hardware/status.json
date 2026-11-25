@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-25",
-  "lapis": "2.35.0",
+  "lapis": "2.36.0",
   "note": "One entry per device family. status: confirmed (a person ran it on real hardware and the log was checked), partly (some functions confirmed), pretend (built from the maker's or a community protocol document and tested against a pretend device only), none (no driver). Add a line to confirmed[] for every checked field test.",
   "groups": [
     {
